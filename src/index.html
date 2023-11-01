@@ -37,7 +37,7 @@
               class="inline-block text-sm md:hover:-translate-y-0.5 md:transition text-blue-600"
               target="_blank"
             >
-              <i class="fa-solid fa-map-marker"></i>
+              <i class="mr-1 fa-solid fa-map-marker"></i>
               Ubicación
             </a>
           </li>
@@ -47,12 +47,111 @@
               class="inline-block text-sm md:hover:-translate-y-0.5 md:transition text-blue-600"
               target="_blank"
             >
-              <i class="fa-solid fa-phone"></i>
+              <i class="mr-1 fa-solid fa-phone"></i>
               Contacto
             </a>
           </li>
         </ul>
       </div>
     </header>
+    <main>
+      <div class="container max-w-screen-xl p-4 mx-auto mt-5 border">
+        <header class="flex flex-col items-center justify-between sm:flex-row">
+          <h2 class="text-2xl font-bold sm:text-3xl">Orden de Recepción</h2>
+          <p class="text-sm font-bold">Fecha: <span id="actualDate"></span></p>
+        </header>
+      </div>
+      <section>
+        <div class="container max-w-screen-xl p-4 mx-auto border">
+          <header
+            class="flex flex-col items-center justify-between sm:flex-row"
+          >
+            <h2 class="text-lg font-bold md:text-xl">Datos del Cliente</h2>
+          </header>
+          <form action="#" class="mt-5">
+            <fieldset class="grid outline-none md:grid-cols-2">
+              <ul class="grid gap-2 p-0 list-none">
+                <li class="flex flex-col items-center sm:gap-5 sm:flex-row">
+                  <label for="cl_cedula">Cédula:</label>
+                  <input
+                    type="text"
+                    name="cl_cedula"
+                    id="cl_cedula"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none"
+                  />
+                </li>
+                <li class="flex flex-col items-center sm:gap-5 sm:flex-row">
+                  <label for="cl_nombre">Nombre:</label>
+                  <input
+                    type="text"
+                    name="cl_nombre "
+                    id="cl_nombre"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none"
+                  />
+                </li>
+                <li class="flex flex-col items-center sm:gap-5 sm:flex-row">
+                  <label for="cl_propietario">Responsable/Propietario:</label>
+                  <input
+                    type="text"
+                    name="cl_propietario "
+                    id="cl_propietario"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none"
+                  />
+                </li>
+                <li class="flex flex-col items-center sm:gap-5 sm:flex-row">
+                  <label for="cl_direccion">Dirección:</label>
+                  <input
+                    type="text"
+                    name="cl_direccion"
+                    id="cl_direccion"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none"
+                  />
+                </li>
+                <li class="flex flex-col items-center sm:gap-5 sm:flex-row">
+                  <label for="cl_celular">Celular:</label>
+                  <input
+                    type="text"
+                    name="cl_celular"
+                    id="cl_celular"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none"
+                  />
+                  <label for="cl_telefono">Teléfono:</label>
+                  <input
+                    type="text"
+                    name="cl_telefono"
+                    id="cl_telefono"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none"
+                  />
+                </li>
+
+                <li class="flex flex-col items-center sm:gap-5 sm:flex-row">
+                  <label for="cl_recepcion" class="md:w-32"
+                    >Recibido por:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_recepcion"
+                    id="cl_recepcion"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none"
+                  />
+                </li>
+
+                <li class="flex flex-col items-center sm:gap-5 sm:flex-row">
+                  <label for="cl_recepcion" class="md:w-52"
+                    >Técnico Responsable:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_recepcion"
+                    id="cl_recepcion"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none"
+                  />
+                </li>
+              </ul>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
