@@ -4,7 +4,343 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RysthCraft | Webpack Template</title>
-    <script defer src="bundle.js"></script>
-  </head>
-  <body></body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  <script defer src="bundle.js"></script></head>
+  <body>
+    <header id="header" class="border">
+      <div
+        class="container flex flex-col items-center justify-between max-w-screen-xl gap-3 p-4 mx-auto sm:flex-row"
+      >
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="grid text-center"
+        >
+          <img
+            class="w-48 md:w-60"
+            src=""
+            alt="Merkauto brand logo"
+            id="brandImage"
+          />
+        </a>
+        <ul class="flex gap-4 p-0 list-none">
+          <li>
+            <a
+              href="https://maps.app.goo.gl/LRxm7ESpvsyR2iwq9"
+              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition text-blue-600"
+              target="_blank"
+            >
+              <i class="mr-1 fa-solid fa-map-marker"></i>
+              Ubicación
+            </a>
+          </li>
+          <li>
+            <a
+              href="tel:+2040715"
+              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition text-blue-600"
+              target="_blank"
+            >
+              <i class="mr-1 fa-solid fa-phone"></i>
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="container max-w-screen-xl p-4 mx-auto mt-5 border">
+        <header class="flex flex-col items-center justify-between sm:flex-row">
+          <h2 class="text-2xl font-bold sm:text-3xl">Orden de Recepción</h2>
+          <p class="text-sm font-bold">Fecha: <span id="actualDate"></span></p>
+        </header>
+      </div>
+      <section>
+        <div class="container max-w-screen-xl p-4 mx-auto border">
+          <form action="#">
+            <fieldset class="grid gap-10 outline-none sm:grid-cols-2">
+              <ul class="grid gap-2 p-0 list-none">
+                <header
+                  class="flex flex-col items-center justify-between mb-2 sm:flex-row"
+                >
+                  <h2 class="text-lg font-bold md:text-xl">
+                    Datos del Cliente
+                  </h2>
+                </header>
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base" for="cl_cedula"
+                    >Cédula:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_cedula"
+                    id="cl_cedula"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base" for="cl_nombre"
+                    >Nombre:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_nombre "
+                    id="cl_nombre"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base" for="cl_propietario"
+                    >Responsable/Propietario:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_propietario "
+                    id="cl_propietario"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base" for="cl_direccion"
+                    >Dirección:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_direccion"
+                    id="cl_direccion"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base" for="cl_celular"
+                    >Celular:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_celular"
+                    id="cl_celular"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                  <label class="text-sm lg:text-base" for="cl_telefono"
+                    >Teléfono:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_telefono"
+                    id="cl_telefono"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base md:w-32" for="cl_recepcion"
+                    >Recibido por:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_recepcion"
+                    id="cl_recepcion"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base md:w-56" for="cl_tecnico"
+                    >Técnico Responsable:</label
+                  >
+                  <input
+                    type="text"
+                    name="cl_tecnico"
+                    id="cl_tecnico"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+              </ul>
+              <ul class="grid gap-2 p-0 list-none">
+                <header
+                  class="flex flex-col items-center justify-between mb-2 sm:flex-row"
+                >
+                  <h2 class="text-lg font-bold md:text-xl">
+                    Datos del Vehículo
+                  </h2>
+                </header>
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base" for="v_oc">O/C:</label>
+                  <input
+                    type="text"
+                    name="v_oc"
+                    id="v_oc"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                  <label class="text-sm lg:text-base" for="v_clave"
+                    >Clave:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_clave"
+                    id="v_clave"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base" for="v_marca"
+                    >Marca:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_marca"
+                    id="v_marca"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                  <label class="text-sm lg:text-base" for="v_color"
+                    >Color:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_color"
+                    id="v_color"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base" for="v_modelo"
+                    >Modelo:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_modelo"
+                    id="v_modelo"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                  <label class="text-sm lg:text-base" for="v_anio">Año:</label>
+                  <input
+                    type="text"
+                    name="v_anio"
+                    id="v_anio"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-5">
+                  <label class="text-sm lg:text-base" for="v_chasis"
+                    >Chasis:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_chasis"
+                    id="v_chasis"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-4">
+                  <label class="text-sm lg:text-base" for="v_motor"
+                    >Motor:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_motor"
+                    id="v_motor"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                  <label class="text-sm lg:text-base" for="v_placa"
+                    >Placa:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_placa"
+                    id="v_placa"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-4">
+                  <label
+                    class="text-sm lg:text-base md:w-40"
+                    for="v_fecha_entrega"
+                    >Fecha Entrega:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_fecha_entrega"
+                    id="v_fecha_entrega"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+                <li class="flex items-center gap-4">
+                  <label
+                    class="text-sm lg:text-base"
+                    for="v_kilometraje"
+                    class="md:w-56"
+                    >Kilometraje:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_kilometraje"
+                    id="v_kilometraje"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+
+                <li class="flex items-center gap-4">
+                  <label
+                    class="text-sm lg:text-base"
+                    for="v_detalle"
+                    class="md:w-32"
+                    >Detalles:</label
+                  >
+                  <input
+                    type="text"
+                    name="v_detalle"
+                    id="v_detalle"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                  />
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="w-full mt-3 text-center">
+              <header class="mb-2 text-center">
+                <h2 class="text-lg font-bold md:text-xl">
+                  Trabajos de Mecánica / Electricidad / Aire Acondicionado
+                </h2>
+              </header>
+              <textarea
+                name="t_mecanica"
+                id="t_mecanica"
+                class="w-full h-40 p-2 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 bg-slate-100 focus:bg-white"
+              ></textarea>
+            </fieldset>
+            <fieldset class="w-full mt-3 text-center">
+              <header class="mb-2 text-center">
+                <h2 class="text-lg font-bold md:text-xl">Trabajos Pintura</h2>
+              </header>
+              <textarea
+                name="t_mecanica"
+                id="t_mecanica"
+                class="w-full h-40 p-2 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 bg-slate-100 focus:bg-white"
+              ></textarea>
+            </fieldset>
+            <fieldset
+              class="grid gap-10 mt-3 outline-none lg:grid-cols-[60%_1fr]"
+            >
+              <div>
+                <header class="mb-2 text-center">
+                  <h2 class="text-lg font-bold md:text-xl">
+                    Equipamento del Auto
+                  </h2>
+                </header>
+                <div
+                  class="grid grid-cols-1 mt-5 gap-x-16 sm:grid-cols-2 md:grid-cols-3"
+                  id="equipamento"
+                ></div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
