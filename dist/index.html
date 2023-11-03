@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RysthCraft | Webpack Template</title>
+    <title>
+      MerkautoEC S.A | Soluciones Integrales en Mantemiento / Reparación /
+      Acondicionamiento de Vehículos | Sistema Web
+    </title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -11,16 +14,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="output.css" />
-    <script defer src="bundle.js"></script>
-  </head>
-  <body>
+  <script defer src="bundle.js"></script></head>
+  <body id="content">
     <header id="header" class="border">
       <div
         class="container flex flex-col items-center justify-between max-w-screen-xl gap-3 p-4 mx-auto sm:flex-row"
       >
         <a
-          href="/"
+          href="https://maps.app.goo.gl/LRxm7ESpvsyR2iwq9"
           target="_blank"
           rel="noopener noreferrer"
           class="grid text-center"
@@ -38,6 +39,7 @@
               href="https://maps.app.goo.gl/LRxm7ESpvsyR2iwq9"
               class="inline-block text-sm md:hover:-translate-y-0.5 md:transition text-blue-600"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i class="mr-1 fa-solid fa-map-marker"></i>
               Ubicación
@@ -48,6 +50,7 @@
               href="tel:+2040715"
               class="inline-block text-sm md:hover:-translate-y-0.5 md:transition text-blue-600"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i class="mr-1 fa-solid fa-phone"></i>
               Contacto
@@ -64,14 +67,14 @@
         </header>
       </div>
       <section>
-        <div class="container max-w-screen-xl p-4 mx-auto border">
+        <div class="container max-w-screen-xl p-4 mx-auto border md:px-16">
           <form action="#">
             <fieldset class="grid gap-10 outline-none sm:grid-cols-2">
               <ul class="grid gap-2 p-0 list-none">
                 <header
                   class="flex flex-col items-center justify-between mb-2 sm:flex-row"
                 >
-                  <h2 class="text-lg font-bold md:text-xl">
+                  <h2 class="text-base font-bold md:text-lg">
                     Datos del Cliente
                   </h2>
                 </header>
@@ -168,7 +171,7 @@
                 <header
                   class="flex flex-col items-center justify-between mb-2 sm:flex-row"
                 >
-                  <h2 class="text-lg font-bold md:text-xl">
+                  <h2 class="text-base font-bold md:text-lg">
                     Datos del Vehículo
                   </h2>
                 </header>
@@ -273,10 +276,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label
-                    class="text-sm lg:text-base"
-                    for="v_kilometraje"
-                    class="md:w-56"
+                  <label class="text-sm lg:text-base" for="v_kilometraje"
                     >Kilometraje:</label
                   >
                   <input
@@ -288,10 +288,7 @@
                 </li>
 
                 <li class="flex items-center gap-4">
-                  <label
-                    class="text-sm lg:text-base"
-                    for="v_detalle"
-                    class="md:w-32"
+                  <label class="text-sm lg:text-base" for="v_detalle"
                     >Detalles:</label
                   >
                   <input
@@ -303,9 +300,9 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="w-full mt-3 text-center">
-              <header class="mb-2 text-center">
-                <h2 class="text-lg font-bold md:text-xl">
+            <fieldset class="w-full mt-5 text-center">
+              <header class="mb-3 text-center">
+                <h2 class="text-base font-bold md:text-lg">
                   Trabajos de Mecánica / Electricidad / Aire Acondicionado
                 </h2>
               </header>
@@ -315,29 +312,101 @@
                 class="w-full h-40 p-2 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 bg-slate-100 focus:bg-white"
               ></textarea>
             </fieldset>
-            <fieldset class="w-full mt-3 text-center">
-              <header class="mb-2 text-center">
-                <h2 class="text-lg font-bold md:text-xl">Trabajos Pintura</h2>
+            <fieldset class="w-full mt-5 text-center">
+              <header class="mb-3 text-center">
+                <h2 class="text-base font-bold md:text-lg">Trabajos Pintura</h2>
               </header>
               <textarea
-                name="t_mecanica"
-                id="t_mecanica"
+                name="t_pintura"
+                id="t_pintura"
                 class="w-full h-40 p-2 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 bg-slate-100 focus:bg-white"
               ></textarea>
             </fieldset>
             <fieldset
-              class="grid gap-10 mt-3 outline-none lg:grid-cols-[60%_1fr]"
+              class="grid gap-10 mt-5 outline-none lg:grid-cols-[65%_1fr]"
             >
               <div>
-                <header class="mb-2 text-center">
-                  <h2 class="text-lg font-bold md:text-xl">
+                <header class="mb-3 text-center">
+                  <h2 class="text-base font-bold md:text-lg">
                     Equipamento del Auto
                   </h2>
                 </header>
                 <div
-                  class="grid grid-cols-1 mt-5 gap-x-16 sm:grid-cols-2 md:grid-cols-3"
+                  class="grid grid-cols-2 mt-5 gap-x-3 sm:gap-x-10 md:grid-cols-3"
                   id="equipamento"
                 ></div>
+              </div>
+              <div class="ml-auto">
+                <header class="mb-3 text-center">
+                  <h2 class="text-base font-bold md:text-lg">
+                    Estado del Vehículo
+                  </h2>
+                </header>
+                <div class="flex mt-5 status-container">
+                  <div
+                    class="inline-block w-6 h-6 mr-2 transition bg-red-600 border border-gray-700 rounded-full cursor-move sm:w-6 sm:h-6 md:hover:scale-110 md:active:scale-125 status-circle"
+                    draggable="true"
+                    data-status="Red"
+                  ></div>
+                  <div
+                    class="inline-block w-6 h-6 mr-2 transition bg-orange-500 border border-gray-700 rounded-full cursor-move status-circle sm:w-6 sm:h-6 md:hover:scale-110 md:active:scale-125"
+                    draggable="true"
+                    data-status="Orange"
+                  ></div>
+                  <div
+                    class="inline-block w-6 h-6 mr-2 transition bg-green-600 border border-gray-700 rounded-full cursor-move status-circle sm:w-6 sm:h-6 md:hover:scale-110 md:active:scale-125"
+                    draggable="true"
+                    data-status="Green"
+                  ></div>
+                </div>
+                <div
+                  class="relative mt-2 overflow-hidden border auto"
+                  id="auto-picture"
+                >
+                  <img
+                    class="p-5 auto-image lg:max-h-[270px] mx-auto"
+                    alt="Automovil picture"
+                    id="auto-image"
+                  />
+                </div>
+                <div
+                  class="flex flex-wrap items-center justify-end gap-2 mt-3 content-actions"
+                >
+                  <button
+                    type="button"
+                    class="px-3 py-2 text-sm font-bold text-white transition bg-blue-700 rounded-md md:hover:scale-105"
+                    id="undoButton"
+                  >
+                    <i class="fas fa-undo"></i>
+                    Deshacer
+                  </button>
+                  <button
+                    type="button"
+                    class="hidden px-3 py-2 text-sm font-bold text-white transition bg-green-700 rounded-md md:hover:scale-105"
+                    id="downloadButton"
+                  >
+                    <i class="fas fa-download"></i>
+                    Descargar
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="w-full mt-10 text-center">
+              <header class="text-center">
+                <h2 class="text-base font-bold md:text-lg">
+                  AUTORIZO A LA EMPRESA MERKAUTO EC A REALIZAR PRUEBAS DE MI
+                  VEHÍCULO EN LA VIA PÚBLICA
+                </h2>
+              </header>
+              <div class="grid gap-10 pt-24 pb-8 sm:grid-cols-2">
+                <div class="grid gap-2">
+                  <hr class="h-[0.1px] bg-gray-400 border-none" />
+                  <p class="text-sm md:text-base">Firma del Cliente</p>
+                </div>
+                <div class="grid gap-2">
+                  <hr class="h-[0.1px] bg-gray-400 border-none" />
+                  <p class="text-sm md:text-base">Firma del Responsable</p>
+                </div>
               </div>
             </fieldset>
           </form>
