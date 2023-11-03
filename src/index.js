@@ -10,5 +10,7 @@ brandImage.src = BrandLogo;
 
 /* Main */
 const actualDate = new Date();
-const formatedDate = `${actualDate.getDay()}/${actualDate.getMonth()}/${actualDate.getFullYear()}`;
+const actualDay =
+  actualDate.getDay() < 10 ? `0${actualDate.getDay()}` : actualDate.getDay();
+const formatedDate = `${actualDay}/${actualDate.getMonth()}/${actualDate.getFullYear()}`;
 document.querySelector('#actualDate').innerHTML = formatedDate;

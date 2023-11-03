@@ -266,7 +266,7 @@ statusCircles.forEach((element) => {
 
 /* Download Functionality */
 
-const downloadButton = document.querySelector('.content-button.download');
+const downloadButton = document.querySelector('#downloadButton');
 downloadButton.addEventListener('click', downloadImage);
 
 function downloadImage() {
