@@ -122,9 +122,11 @@ function moveActualCircle(event) {
 }
 
 // Variables to store initial values
-let initialX, initialY;
+let initialX;
+let initialY;
 let activeCircle = null;
-let offsetX, offsetY;
+let offsetX;
+let offsetY;
 
 // Function to start dragging
 function startDrag(event) {
@@ -275,7 +277,7 @@ function downloadImage() {
   container.scrollTop = container.scrollHeight;
 
   // Use html2canvas to capture the HTML element
-  html2canvas(container, { scale: 2 }).then(function (canvas) {
+  html2canvas(container, { scale: 2 }).then((canvas) => {
     const imageDataURL = canvas.toDataURL('image/png');
 
     // Create a link for downloading the image
