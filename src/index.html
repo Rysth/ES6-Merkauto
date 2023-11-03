@@ -337,6 +337,62 @@
                   id="equipamento"
                 ></div>
               </div>
+              <div class="border">
+                <div class="status-container">
+                  <div
+                    class="status-circle red-status"
+                    draggable="true"
+                    data-status="Red"
+                  ></div>
+                  <div
+                    class="status-circle orange-status"
+                    draggable="true"
+                    data-status="Orange"
+                  ></div>
+                  <div
+                    class="status-circle green-status"
+                    draggable="true"
+                    data-status="Green"
+                  ></div>
+                </div>
+                <div class="auto" id="auto-picture">
+                  <img
+                    class="auto-image"
+                    src=""
+                    alt="Automovil picture"
+                    id="auto-image"
+                  />
+                </div>
+                <div class="content-description">
+                  <p class="content-text tag">
+                    <span class="red">Valor</span> = Roto
+                  </p>
+                  <p class="content-text tag">
+                    <span class="orange">Valor</span> = Golpe
+                  </p>
+                  <p class="content-text tag">
+                    <span class="green">Valor</span> = Rayas
+                  </p>
+                </div>
+                <div class="content-actions">
+                  <button
+                    type="button"
+                    class="content-button delete"
+                    id="undoButton"
+                  >
+                    <i class="fas fa-undo"></i>
+                    Deshacer
+                  </button>
+                  <button
+                    type="button"
+                    class="content-button download"
+                    id="undoButton"
+                  >
+                    <i class="fas fa-download"></i>
+                    Descargar
+                  </button>
+                </div>
+              </div>
             </fieldset>
           </form>
         </div>

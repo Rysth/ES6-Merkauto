@@ -1,3 +1,118 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.status-circle {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px; /* Add spacing between circles */
+  cursor: move;
+  z-index: 1000;
+  outline: 1px solid black;
+}
+
+.status-circle.placed {
+  position: absolute;
+}
+
+.red-status {
+  background-color: red;
+}
+
+.orange-status {
+  background-color: orange;
+}
+
+.green-status {
+  background-color: green;
+}
+
+.auto {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  border: 1px solid black;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.auto-image {
+  margin: 0 auto;
+  width: 100%;
+  padding: 1em;
+  object-fit: cover;
+}
+
+.content {
+  margin: 1em 0;
+  display: grid;
+  justify-content: center;
+}
+
+.content-text {
+  font-size: 0.9rem;
+  margin: 1em 0;
+  line-height: 1.1;
+}
+
+.content-text.title {
+  text-align: center;
+}
+
+.content-description {
+  display: flex;
+  margin: 0 auto;
+  gap: 1em;
+}
+
+.content-text.tag {
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+  background-color: red;
+}
+
+.orange {
+  color: orange;
+  background-color: orange;
+}
+
+.green {
+  color: green;
+  background-color: green;
+}
+
+.content-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 1em 0;
+  gap: 0.5em;
+}
+
+.content-button {
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.25em;
+  width: 8em;
+  padding: 0.35em 0;
+  color: white;
+}
+
+.content-button.delete {
+  background-color: blue;
+}
+
+.content-button.download {
+  background-color: green;
+}
+
+.prevent-scroll {
+  touch-action: none;
+}
