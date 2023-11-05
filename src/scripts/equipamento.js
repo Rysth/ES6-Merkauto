@@ -102,7 +102,7 @@ equipamento.innerHTML = information
   .map(
     (item) => `
   <div class=" flex items-center justify-between md:hover:bg-slate-200 px-2 active:bg-blue-400 md:active:bg-blue-300 transition-colors rounded-md">
-    <label for="equipamento-${item.id}" class="w-full cursor-pointer  py-2 text-sm md:text-base select-none">${item.name}</label>
+    <label for="${item.id}" class="w-full cursor-pointer  py-2 text-sm select-none">${item.name}</label>
     <input
       type="checkbox"
       id=${item.id}

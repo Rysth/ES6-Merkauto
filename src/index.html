@@ -20,9 +20,9 @@
     />
   </head>
   <body id="content">
-    <header id="header" class="border">
+    <header id="header" class="sticky top-0 bg-white">
       <div
-        class="container flex flex-col items-center justify-between max-w-screen-xl gap-3 px-4 py-4 mx-auto lg:px-0 sm:flex-row"
+        class="container flex flex-col items-center justify-between max-w-screen-lg gap-3 px-4 py-4 mx-auto lg:px-0 sm:flex-row"
       >
         <a
           href="https://maps.app.goo.gl/LRxm7ESpvsyR2iwq9"
@@ -55,117 +55,119 @@
       </div>
     </header>
     <main>
-      <div class="container max-w-screen-xl p-4 mx-auto mt-5 border">
+      <div class="container max-w-screen-lg p-4 mx-auto mt-5 border">
         <header class="flex flex-col items-center justify-between sm:flex-row">
           <h2 class="text-2xl font-bold sm:text-3xl">Orden de Recepción</h2>
           <p class="text-sm font-bold">Fecha: <span id="actualDate"></span></p>
         </header>
       </div>
       <section>
-        <div class="container max-w-screen-xl p-4 mx-auto border">
+        <div class="container max-w-screen-lg p-4 mx-auto border">
           <form action="#" id="form">
-            <fieldset class="grid gap-10 outline-none sm:grid-cols-2">
+            <fieldset class="grid gap-10 outline-none md:gap-20 sm:grid-cols-2">
               <ul class="grid gap-2 p-0 list-none">
                 <header
                   class="flex flex-col items-center justify-between mb-2 sm:flex-row"
                 >
-                  <h2 class="text-base font-bold md:text-lg">
+                  <h2 class="text-base font-black md:text-lg">
                     Datos del Cliente
                   </h2>
                 </header>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="cl_cedula"
+                  <label class="text-sm font-semibold" for="cl_cedula"
                     >Cédula:</label
                   >
                   <input
                     type="text"
                     name="cl_cedula"
                     id="cl_cedula"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="cl_nombre"
+                  <label class="text-sm font-semibold" for="cl_nombre"
                     >Nombre:</label
                   >
                   <input
                     type="text"
                     name="cl_nombre "
                     id="cl_nombre"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="cl_propietario"
+                  <label class="text-sm font-semibold" for="cl_propietario"
                     >Responsable/Propietario:</label
                   >
                   <input
                     type="text"
                     name="cl_propietario "
                     id="cl_propietario"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="cl_direccion"
+                  <label class="text-sm font-semibold" for="cl_direccion"
                     >Dirección:</label
                   >
                   <input
                     type="text"
                     name="cl_direccion"
                     id="cl_direccion"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="cl_celular"
+                  <label class="text-sm font-semibold" for="cl_celular"
                     >Celular:</label
                   >
                   <input
                     type="text"
                     name="cl_celular"
                     id="cl_celular"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm lg:text-base" for="cl_telefono"
+                  <label class="text-sm font-semibold" for="cl_telefono"
                     >Teléfono:</label
                   >
                   <input
                     type="tel"
                     name="cl_telefono"
                     id="cl_telefono"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
 
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base md:w-32" for="cl_recepcion"
+                  <label
+                    class="text-sm font-semibold md:w-32"
+                    for="cl_recepcion"
                     >Recibido por:</label
                   >
                   <input
                     type="text"
                     name="cl_recepcion"
                     id="cl_recepcion"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
 
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base md:w-56" for="cl_tecnico"
+                  <label class="text-sm font-semibold md:w-60" for="cl_tecnico"
                     >Técnico Responsable:</label
                   >
                   <input
                     type="text"
                     name="cl_tecnico"
                     id="cl_tecnico"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
@@ -179,106 +181,106 @@
                   </h2>
                 </header>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="v_oc">O/C:</label>
+                  <label class="text-sm font-semibold" for="v_oc">O/C:</label>
                   <input
                     type="text"
                     name="v_oc"
                     id="v_oc"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm lg:text-base" for="v_clave"
+                  <label class="text-sm font-semibold" for="v_clave"
                     >Clave:</label
                   >
                   <input
                     type="text"
                     name="v_clave"
                     id="v_clave"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="v_marca"
+                  <label class="text-sm font-semibold" for="v_marca"
                     >Marca:</label
                   >
                   <input
                     type="text"
                     name="v_marca"
                     id="v_marca"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm lg:text-base" for="v_color"
+                  <label class="text-sm font-semibold" for="v_color"
                     >Color:</label
                   >
                   <input
                     type="text"
                     name="v_color"
                     id="v_color"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="v_modelo"
+                  <label class="text-sm font-semibold" for="v_modelo"
                     >Modelo:</label
                   >
                   <input
                     type="text"
                     name="v_modelo"
                     id="v_modelo"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm lg:text-base" for="v_anio">Año:</label>
+                  <label class="text-sm font-semibold" for="v_anio">Año:</label>
                   <input
                     type="number"
                     name="v_anio"
                     id="v_anio"
                     min="1900"
                     max="2030"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-5">
-                  <label class="text-sm lg:text-base" for="v_chasis"
+                  <label class="text-sm font-semibold" for="v_chasis"
                     >Chasis:</label
                   >
                   <input
                     type="text"
                     name="v_chasis"
                     id="v_chasis"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="v_motor"
+                  <label class="text-sm font-semibold" for="v_motor"
                     >Motor:</label
                   >
                   <input
                     type="text"
                     name="v_motor"
                     id="v_motor"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm lg:text-base" for="v_placa"
+                  <label class="text-sm font-semibold" for="v_placa"
                     >Placa:</label
                   >
                   <input
                     type="text"
                     name="v_placa"
                     id="v_placa"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
                   <label
-                    class="text-sm lg:text-base md:w-40"
+                    class="text-sm font-semibold md:w-40"
                     for="v_fecha_entrega"
                     >Fecha Entrega:</label
                   >
@@ -286,32 +288,32 @@
                     type="date"
                     name="v_fecha_entrega"
                     id="v_fecha_entrega"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="v_kilometraje"
+                  <label class="text-sm font-semibold" for="v_kilometraje"
                     >Kilometraje:</label
                   >
                   <input
                     type="text"
                     name="v_kilometraje"
                     id="v_kilometraje"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
 
                 <li class="flex items-center gap-4">
-                  <label class="text-sm lg:text-base" for="v_detalle"
+                  <label class="text-sm font-semibold" for="v_detalle"
                     >Detalles:</label
                   >
                   <input
                     type="text"
                     name="v_detalle"
                     id="v_detalle"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
@@ -326,7 +328,7 @@
               <textarea
                 name="t_mecanica"
                 id="t_mecanica"
-                class="w-full h-40 p-2 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 bg-slate-100 focus:bg-white"
+                class="w-full h-32 p-2 bg-gray-100 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 focus:bg-white"
               ></textarea>
             </fieldset>
             <fieldset class="w-full mt-5 text-center">
@@ -336,7 +338,7 @@
               <textarea
                 name="t_pintura"
                 id="t_pintura"
-                class="w-full h-40 p-2 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 bg-slate-100 focus:bg-white"
+                class="w-full h-32 p-2 bg-gray-100 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 focus:bg-white"
               ></textarea>
             </fieldset>
             <fieldset
@@ -410,29 +412,30 @@
             </fieldset>
             <fieldset class="w-full mt-10 text-center">
               <header class="text-center">
-                <h2 class="text-base font-bold md:text-lg">
-                  AUTORIZO A LA EMPRESA MERKAUTO EC A REALIZAR PRUEBAS DE MI
-                  VEHÍCULO EN LA VIA PÚBLICA
+                <h2 class="text-sm font-bold">
+                  Autorizo a la empresa MerkautoEC a realizar pruebas de mi
+                  vehículo en la vía pública.
                 </h2>
               </header>
-              <div class="grid gap-10 pt-24 pb-8 sm:grid-cols-2">
+              <div class="grid gap-10 pt-20 pb-12 sm:grid-cols-2">
                 <div class="grid gap-2">
                   <hr class="h-[0.1px] bg-gray-400 border-none" />
-                  <p class="text-sm md:text-base">Firma del Cliente</p>
+                  <p class="text-sm">Firma del Cliente</p>
                 </div>
                 <div class="grid gap-2">
                   <hr class="h-[0.1px] bg-gray-400 border-none" />
-                  <p class="text-sm md:text-base">Firma del Responsable</p>
+                  <p class="text-sm">Firma del Responsable</p>
                 </div>
               </div>
             </fieldset>
             <fieldset class="flex justify-center">
               <button
                 type="submit"
-                class="p-2 transition border rounded-md md:hover:shadow-2xl"
+                class="p-2 px-4 text-sm font-semibold text-white transition bg-green-600 border rounded-md md:hover:shadow-2xl md:hover:scale-105"
                 id="submit"
               >
-                Envíar
+                <i class="fas fa-save"></i>
+                Guardar
               </button>
             </fieldset>
           </form>
