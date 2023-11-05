@@ -1,67 +1,106 @@
+import html2canvas from 'html2canvas';
 import { information } from './equipamento';
 
 const formContent = document.querySelector('#form');
-const equipmentItems = Array.from(document.querySelectorAll('.equipment'));
+const equipmentCheckboxes = Array.from(document.querySelectorAll('.equipment'));
 
-function createJSONFile() {
-  // Get values from the HTML form
-  const clientData = {
-    cl_cedula: document.getElementById('cl_cedula').value,
-    cl_nombre: document.getElementById('cl_nombre').value,
-    cl_propietario: document.getElementById('cl_propietario').value,
-    cl_direccion: document.getElementById('cl_direccion').value,
-    cl_celular: document.getElementById('cl_celular').value,
-    cl_telefono: document.getElementById('cl_telefono').value,
-    cl_recepcion: document.getElementById('cl_recepcion').value,
-    cl_tecnico: document.getElementById('cl_tecnico').value,
-  };
-
-  const vehicleData = {
-    v_oc: document.getElementById('v_oc').value,
-    v_clave: document.getElementById('v_clave').value,
-    v_marca: document.getElementById('v_marca').value,
-    v_color: document.getElementById('v_color').value,
-    v_modelo: document.getElementById('v_modelo').value,
-    v_anio: document.getElementById('v_anio').value,
-    v_chasis: document.getElementById('v_chasis').value,
-    v_motor: document.getElementById('v_motor').value,
-    v_placa: document.getElementById('v_placa').value,
-    v_fecha_entrega: document.getElementById('v_fecha_entrega').value,
-    v_kilometraje: document.getElementById('v_kilometraje').value,
-    v_detalle: document.getElementById('v_detalle').value,
-  };
-
-  const mecanicInfo = document.querySelector('#t_mecanica').value;
-  const paintInfo = document.querySelector('#t_pintura').value;
-
-  const equipmentInfo = equipmentItems.filter((item) => item.checked);
-  const equipmentElements = equipmentInfo.map((element) => {
-    const selectedInfo = information.find(
-      (info) => info.id === parseInt(element.id),
-    );
-    return selectedInfo;
-  });
-
-  // Construct the JSON object
-  const jsonData = {
-    cliente: clientData,
-    vehiculo: vehicleData,
-    trabajos: {
-      mecanica: mecanicInfo,
-      pintura: paintInfo,
-    },
-    equipamento: equipmentElements,
-  };
-
-  // Convert the JSON object to a string
-  const jsonContent = JSON.stringify(jsonData, null, 2);
-
-  // You can save the JSON string as a file or perform further actions with it.
-  // For example, if you want to save it as a file on the client side, you can use the FileSaver library or similar.
-  return jsonContent;
+// Function to capture the HTML element as an image
+async function captureImage() {
+  const container = document.getElementById('auto-picture');
+  container.scrollTop = container.scrollHeight;
+  const canvas = await html2canvas(container, { scale: 2 });
+  return canvas.toDataURL('image/png');
 }
 
-formContent.addEventListener('submit', (e) => {
+// Function to extract field values by element IDs
+function getFieldValueById(elementId) {
+  return document.getElementById(elementId).value;
+}
+
+// Function to create and trigger a download of a text file
+function downloadTextFile(filename, text) {
+  const blob = new Blob([text], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+
+  document.body.appendChild(a);
+  a.click();
+
+  window.URL.revokeObjectURL(url); // Release the object URL
+}
+
+// Function to create and log the JSON file
+async function createJSONFile() {
+  try {
+    const capturedImageData = await captureImage();
+
+    const actualDate = getFieldValueById('actualDate');
+
+    // Get values from the HTML form
+    const clientData = {
+      cedula: getFieldValueById('cl_cedula'),
+      nombre: getFieldValueById('cl_nombre'),
+      propietario: getFieldValueById('cl_propietario'),
+      direccion: getFieldValueById('cl_direccion'),
+      celular: getFieldValueById('cl_celular'),
+      telefono: getFieldValueById('cl_telefono'),
+      recepcion: getFieldValueById('cl_recepcion'),
+      tecnico: getFieldValueById('cl_tecnico'),
+    };
+
+    const vehicleData = {
+      oc: getFieldValueById('v_oc'),
+      clave: getFieldValueById('v_clave'),
+      marca: getFieldValueById('v_marca'),
+      color: getFieldValueById('v_color'),
+      modelo: getFieldValueById('v_modelo'),
+      anio: getFieldValueById('v_anio'),
+      chasis: getFieldValueById('v_chasis'),
+      motor: getFieldValueById('v_motor'),
+      placa: getFieldValueById('v_placa'),
+      fecha_entrega: getFieldValueById('v_fecha_entrega'),
+      kilometraje: getFieldValueById('v_kilometraje'),
+      detalle: getFieldValueById('v_detalle'),
+    };
+
+    const mecanicInfo = getFieldValueById('t_mecanica');
+    const paintInfo = getFieldValueById('t_pintura');
+
+    const selectedEquipmentItems = equipmentCheckboxes.filter(
+      (item) => item.checked,
+    );
+    const selectedEquipmentElements = selectedEquipmentItems.map((element) => {
+      const selectedInfo = information.find(
+        (info) => info.id === parseInt(element.id),
+      );
+      return selectedInfo;
+    });
+
+    // Construct the JSON object
+    const jsonData = {
+      fecha: actualDate,
+      cliente: clientData,
+      vehiculo: vehicleData,
+      trabajos: {
+        mecanica: mecanicInfo,
+        pintura: paintInfo,
+      },
+      equipamento: selectedEquipmentElements,
+      automovil: capturedImageData,
+    };
+
+    // Convert the JSON object to a string
+    const jsonContent = JSON.stringify(jsonData, null, 2);
+    downloadTextFile('output.txt', jsonContent);
+  } catch (error) {
+    console.error('Error capturing image:', error);
+  }
+}
+
+formContent.addEventListener('submit', async (e) => {
   e.preventDefault();
-  console.log(createJSONFile());
+  await createJSONFile();
 });

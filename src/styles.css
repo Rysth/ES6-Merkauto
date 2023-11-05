@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .status-circle.placed {
   position: absolute;
   z-index: 1000;
