@@ -1,4 +1,4 @@
-const information = [
+export const information = [
   {
     id: 1,
     name: 'Radio',
@@ -101,12 +101,12 @@ const equipamento = document.querySelector('#equipamento');
 equipamento.innerHTML = information
   .map(
     (item) => `
-  <div class="flex items-center justify-between md:hover:bg-slate-200 px-2 active:bg-blue-400 md:active:bg-blue-300 transition-colors rounded-md">
+  <div class=" flex items-center justify-between md:hover:bg-slate-200 px-2 active:bg-blue-400 md:active:bg-blue-300 transition-colors rounded-md">
     <label for="equipamento-${item.id}" class="w-full cursor-pointer  py-2 text-sm md:text-base select-none">${item.name}</label>
     <input
       type="checkbox"
-      id=equipamento-${item.id}
-      class="w-5 h-5  bg-black"
+      id=${item.id}
+      class="w-5 h-5 bg-black equipment"
     />
   </div>
 `,

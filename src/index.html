@@ -68,7 +68,7 @@
       </div>
       <section>
         <div class="container max-w-screen-xl p-4 mx-auto border">
-          <form action="#">
+          <form action="#" id="form">
             <fieldset class="grid gap-10 outline-none sm:grid-cols-2">
               <ul class="grid gap-2 p-0 list-none">
                 <header
@@ -87,6 +87,7 @@
                     name="cl_cedula"
                     id="cl_cedula"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-4">
@@ -98,6 +99,7 @@
                     name="cl_nombre "
                     id="cl_nombre"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-4">
@@ -109,6 +111,7 @@
                     name="cl_propietario "
                     id="cl_propietario"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-4">
@@ -120,6 +123,7 @@
                     name="cl_direccion"
                     id="cl_direccion"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-4">
@@ -131,15 +135,17 @@
                     name="cl_celular"
                     id="cl_celular"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                   <label class="text-sm lg:text-base" for="cl_telefono"
                     >Teléfono:</label
                   >
                   <input
-                    type="text"
+                    type="tel"
                     name="cl_telefono"
                     id="cl_telefono"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
 
@@ -152,6 +158,7 @@
                     name="cl_recepcion"
                     id="cl_recepcion"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
 
@@ -164,6 +171,7 @@
                     name="cl_tecnico"
                     id="cl_tecnico"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
               </ul>
@@ -182,6 +190,7 @@
                     name="v_oc"
                     id="v_oc"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                   <label class="text-sm lg:text-base" for="v_clave"
                     >Clave:</label
@@ -191,6 +200,7 @@
                     name="v_clave"
                     id="v_clave"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-4">
@@ -202,6 +212,7 @@
                     name="v_marca"
                     id="v_marca"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                   <label class="text-sm lg:text-base" for="v_color"
                     >Color:</label
@@ -211,6 +222,7 @@
                     name="v_color"
                     id="v_color"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-4">
@@ -222,13 +234,17 @@
                     name="v_modelo"
                     id="v_modelo"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                   <label class="text-sm lg:text-base" for="v_anio">Año:</label>
                   <input
-                    type="text"
+                    type="number"
                     name="v_anio"
                     id="v_anio"
+                    min="1900"
+                    max="2030"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-5">
@@ -240,6 +256,7 @@
                     name="v_chasis"
                     id="v_chasis"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-4">
@@ -251,6 +268,7 @@
                     name="v_motor"
                     id="v_motor"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                   <label class="text-sm lg:text-base" for="v_placa"
                     >Placa:</label
@@ -260,6 +278,7 @@
                     name="v_placa"
                     id="v_placa"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-4">
@@ -269,10 +288,11 @@
                     >Fecha Entrega:</label
                   >
                   <input
-                    type="text"
+                    type="date"
                     name="v_fecha_entrega"
                     id="v_fecha_entrega"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
                 <li class="flex items-center gap-4">
@@ -284,6 +304,7 @@
                     name="v_kilometraje"
                     id="v_kilometraje"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
 
@@ -296,6 +317,7 @@
                     name="v_detalle"
                     id="v_detalle"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-slate-100 focus:bg-white"
+                    required
                   />
                 </li>
               </ul>
@@ -408,6 +430,15 @@
                   <p class="text-sm md:text-base">Firma del Responsable</p>
                 </div>
               </div>
+            </fieldset>
+            <fieldset class="flex justify-center">
+              <button
+                type="submit"
+                class="p-2 transition border rounded-md md:hover:shadow-2xl"
+                id="submit"
+              >
+                Envíar
+              </button>
             </fieldset>
           </form>
         </div>
