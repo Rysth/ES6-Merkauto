@@ -4,17 +4,98 @@ import { information } from './equipamento';
 const formContent = document.querySelector('#form');
 const equipmentCheckboxes = Array.from(document.querySelectorAll('.equipment'));
 
+// Function to extract field values by element IDs
+function getFieldValueById(elementId) {
+  return document.getElementById(elementId).value;
+}
+
+function readJSONFromFile(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+      try {
+        const jsonData = JSON.parse(event.target.result);
+        resolve(jsonData);
+      } catch (error) {
+        reject(error);
+      }
+    };
+
+    reader.readAsText(file);
+  });
+}
+
+const fileInput = document.querySelector('#fileInput');
+
+function checkEquipmentFromJSON(equipmentArray) {
+  equipmentArray.forEach((equipment) => {
+    const checkboxId = `${equipment.id}`;
+    const checkbox = document.getElementById(checkboxId);
+    if (checkbox) {
+      checkbox.checked = true;
+    }
+  });
+}
+
+fileInput.addEventListener('change', (event) => {
+  const selectedFile = event.target.files[0];
+
+  if (selectedFile) {
+    readJSONFromFile(selectedFile)
+      .then((jsonData) => {
+        // Now you have the JSON data from the file
+        console.log(jsonData);
+
+        // Clients Data
+        document.getElementById('cl_cedula').value = jsonData.cliente.cedula;
+        document.getElementById('cl_nombre').value = jsonData.cliente.nombre;
+        document.getElementById('cl_propietario').value =
+          jsonData.cliente.propietario;
+        document.getElementById('cl_direccion').value =
+          jsonData.cliente.direccion;
+        document.getElementById('cl_celular').value = jsonData.cliente.celular;
+        document.getElementById('cl_telefono').value =
+          jsonData.cliente.telefono;
+        document.getElementById('cl_recepcion').value =
+          jsonData.cliente.recepcion;
+        document.getElementById('cl_tecnico').value = jsonData.cliente.tecnico;
+
+        // Vehicle's Data
+        document.getElementById('v_oc').value = jsonData.vehiculo.oc;
+        document.getElementById('v_clave').value = jsonData.vehiculo.clave;
+        document.getElementById('v_marca').value = jsonData.vehiculo.marca;
+        document.getElementById('v_color').value = jsonData.vehiculo.color;
+        document.getElementById('v_modelo').value = jsonData.vehiculo.modelo;
+        document.getElementById('v_anio').value = jsonData.vehiculo.anio;
+        document.getElementById('v_chasis').value = jsonData.vehiculo.chasis;
+        document.getElementById('v_motor').value = jsonData.vehiculo.motor;
+        document.getElementById('v_placa').value = jsonData.vehiculo.motor;
+        document.getElementById('v_placa').value = jsonData.vehiculo.placa;
+        document.getElementById('v_fecha_entrega').value =
+          jsonData.vehiculo.fecha_entrega;
+        document.getElementById('v_kilometraje').value =
+          jsonData.vehiculo.kilometraje;
+        document.getElementById('v_detalle').value = jsonData.vehiculo.detalle;
+
+        document.getElementById('t_mecanica').value =
+          jsonData.trabajos.mecanica;
+        document.getElementById('t_pintura').value = jsonData.trabajos.pintura;
+
+        checkEquipmentFromJSON(jsonData.equipamento);
+      })
+      .catch((error) => {
+        console.error('Error reading the file:', error);
+      });
+  }
+});
+
 // Function to capture the HTML element as an image
 async function captureImage() {
   const container = document.getElementById('auto-picture');
   container.scrollTop = container.scrollHeight;
   const canvas = await html2canvas(container, { scale: 2 });
   return canvas.toDataURL('image/png');
-}
-
-// Function to extract field values by element IDs
-function getFieldValueById(elementId) {
-  return document.getElementById(elementId).value;
 }
 
 // Function to create and trigger a download of a text file

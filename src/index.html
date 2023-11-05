@@ -22,7 +22,7 @@
   <body id="content">
     <header id="header" class="border">
       <div
-        class="container flex flex-col items-center justify-between max-w-screen-xl gap-3 p-4 mx-auto sm:flex-row"
+        class="container flex flex-col items-center justify-between max-w-screen-xl gap-3 px-4 py-4 mx-auto lg:px-0 sm:flex-row"
       >
         <a
           href="https://maps.app.goo.gl/LRxm7ESpvsyR2iwq9"
@@ -37,28 +37,19 @@
             id="brandImage"
           />
         </a>
-        <ul class="flex gap-4 p-0 list-none">
-          <li>
-            <a
-              href="https://maps.app.goo.gl/LRxm7ESpvsyR2iwq9"
-              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition text-blue-600"
-              target="_blank"
-              rel="noopener noreferrer"
+        <ul class="flex items-center gap-4 p-0 list-none">
+          <li
+            class="text-sm md:hover:-translate-y-0.5 md:transition bg-blue-600 rounded-md p-2 text-white cursor-pointer relative"
+          >
+            <span class="text-sm">
+              <i class="mr-1 cursor-pointer fa-solid fa-upload"></i>
+              Cargar Archivo</span
             >
-              <i class="mr-1 fa-solid fa-map-marker"></i>
-              Ubicación
-            </a>
-          </li>
-          <li>
-            <a
-              href="tel:+2040715"
-              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition text-blue-600"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="mr-1 fa-solid fa-phone"></i>
-              Contacto
-            </a>
+            <input
+              type="file"
+              class="absolute inset-0 left-0 z-50 w-full h-full opacity-0 cursor-pointer"
+              id="fileInput"
+            />
           </li>
         </ul>
       </div>
