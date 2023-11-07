@@ -20,7 +20,7 @@
     />
   </head>
   <body id="content">
-    <header id="header" class="sticky top-0 bg-white">
+    <header id="header" class="bg-white">
       <div
         class="container flex flex-col items-center justify-between max-w-screen-lg gap-3 px-4 py-4 mx-auto lg:px-0 sm:flex-row"
       >
@@ -64,7 +64,7 @@
       <section>
         <div class="container max-w-screen-lg p-4 mx-auto border">
           <form action="#" id="form">
-            <fieldset class="grid gap-10 outline-none md:gap-20 sm:grid-cols-2">
+            <fieldset class="grid gap-10 outline-none md:gap-16 sm:grid-cols-2">
               <ul class="grid gap-2 p-0 list-none">
                 <header
                   class="flex flex-col items-center justify-between mb-2 sm:flex-row"
@@ -160,7 +160,7 @@
                 </li>
 
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold md:w-60" for="cl_tecnico"
+                  <label class="text-sm font-semibold md:w-64" for="cl_tecnico"
                     >Técnico Responsable:</label
                   >
                   <input
@@ -215,7 +215,7 @@
                     >Color:</label
                   >
                   <input
-                    type="text"
+                    type="color"
                     name="v_color"
                     id="v_color"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
@@ -285,7 +285,7 @@
                     >Fecha Entrega:</label
                   >
                   <input
-                    type="date"
+                    type="datetime-local"
                     name="v_fecha_entrega"
                     id="v_fecha_entrega"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
@@ -297,9 +297,12 @@
                     >Kilometraje:</label
                   >
                   <input
-                    type="text"
+                    type="number"
                     name="v_kilometraje"
                     id="v_kilometraje"
+                    min="0"
+                    value="0"
+                    max="100000"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
@@ -314,7 +317,6 @@
                     name="v_detalle"
                     id="v_detalle"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
-                    required
                   />
                 </li>
               </ul>
@@ -328,7 +330,7 @@
               <textarea
                 name="t_mecanica"
                 id="t_mecanica"
-                class="w-full h-32 p-2 bg-gray-100 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 focus:bg-white"
+                class="w-full h-24 p-2 bg-gray-100 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 focus:bg-white"
               ></textarea>
             </fieldset>
             <fieldset class="w-full mt-5 text-center">
@@ -338,11 +340,11 @@
               <textarea
                 name="t_pintura"
                 id="t_pintura"
-                class="w-full h-32 p-2 bg-gray-100 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 focus:bg-white"
+                class="w-full h-24 p-2 bg-gray-100 border rounded-md outline-none resize-none md:p-4 focus:border-gray-500 focus:bg-white"
               ></textarea>
             </fieldset>
             <fieldset
-              class="grid gap-10 mt-5 outline-none lg:grid-cols-[65%_1fr]"
+              class="grid gap-10 mt-5 outline-none sm:grid-cols-[65%_1fr]"
             >
               <div>
                 <header class="mb-3 text-center">
@@ -389,16 +391,30 @@
                   />
                 </div>
                 <div
-                  class="flex flex-wrap items-center justify-end gap-2 mt-3 content-actions"
+                  class="items-center justify-end gap-2 mt-3 content-actions"
                 >
+                  <li class="flex items-center justify-between gap-4">
+                    <label class="text-sm font-semibold" for="v_combustible"
+                      >Combustible:</label
+                    >
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      name="v_combustible"
+                      id="v_combustible"
+                      class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
+                    />
+                  </li>
                   <button
                     type="button"
-                    class="px-3 py-2 text-sm font-bold text-white transition bg-blue-700 rounded-md md:hover:scale-105"
+                    class="float-right px-3 py-2 mt-3 text-xs font-bold text-white transition bg-blue-700 rounded-md md:hover:scale-105"
                     id="undoButton"
                   >
                     <i class="fas fa-undo"></i>
                     Deshacer
                   </button>
+
                   <button
                     type="button"
                     class="hidden px-3 py-2 text-sm font-bold text-white transition bg-green-700 rounded-md md:hover:scale-105"
@@ -419,11 +435,11 @@
               </header>
               <div class="grid gap-10 pt-20 pb-12 sm:grid-cols-2">
                 <div class="grid gap-2">
-                  <hr class="h-[0.1px] bg-gray-400 border-none" />
+                  <hr class="border border-gray-300" />
                   <p class="text-sm">Firma del Cliente</p>
                 </div>
                 <div class="grid gap-2">
-                  <hr class="h-[0.1px] bg-gray-400 border-none" />
+                  <hr class="border border-gray-300" />
                   <p class="text-sm">Firma del Responsable</p>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import html2canvas from 'html2canvas';
-import { information } from './equipamento';
+import { information } from './equipamento.js';
 
 const formContent = document.querySelector('#form');
 const equipmentCheckboxes = Array.from(document.querySelectorAll('.equipment'));
@@ -77,6 +77,8 @@ fileInput.addEventListener('change', (event) => {
         document.getElementById('v_kilometraje').value =
           jsonData.vehiculo.kilometraje;
         document.getElementById('v_detalle').value = jsonData.vehiculo.detalle;
+        document.getElementById('v_combustible').value =
+          jsonData.vehiculo.combustible;
 
         document.getElementById('t_mecanica').value =
           jsonData.trabajos.mecanica;
@@ -145,6 +147,7 @@ async function createJSONFile() {
       fecha_entrega: getFieldValueById('v_fecha_entrega'),
       kilometraje: getFieldValueById('v_kilometraje'),
       detalle: getFieldValueById('v_detalle'),
+      combustible: getFieldValueById('v_combustible'),
     };
 
     const mecanicInfo = getFieldValueById('t_mecanica');
