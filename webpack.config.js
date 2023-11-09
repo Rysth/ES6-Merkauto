@@ -3,9 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development', // or 'production'
-  entry: './src/index.js',
+  entry: {
+    index: './src/pages/index/index.js',
+    vehicle: './src/pages/vehicle/vehicle.js',
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -22,9 +25,21 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/pages/index/index.html',
+      chunks: ['index'],
+      filename: 'index.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/vehicle/vehicle.html',
+      chunks: ['vehicle'],
+      filename: 'vehicle.html',
     }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   devServer: {
     static: path.join(__dirname, 'dist'),
     compress: true,
