@@ -55,3 +55,6 @@ body {
 .prevent-scroll {
   touch-action: none;
 }
+
+@media print {
+}

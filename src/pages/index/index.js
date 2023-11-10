@@ -22,3 +22,8 @@ const formattedDate = new Intl.DateTimeFormat(
 
 // Update the HTML element with the formatted date
 document.querySelector('#actualDate').textContent = formattedDate;
+
+const printButton = document.querySelector('#printButton');
+printButton.addEventListener('click', () => {
+  window.print();
+});

@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./src/**/*.{html,js}'],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        print: { raw: 'print' },
+        // Means => @media  print { ... }
+      },
+    },
   },
   plugins: [],
 };
