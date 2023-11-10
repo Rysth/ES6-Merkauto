@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development', // or 'production'
   entry: {
+    main: './src/main.js', // Main entry point
     index: './src/pages/index/index.js',
     vehicle: './src/pages/vehicle/vehicle.js',
   },
@@ -37,7 +38,15 @@ module.exports = {
   ],
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      cacheGroups: {
+        default: false,
+        commons: {
+          chunks: 'all',
+          minChunks: 2,
+          name: 'commons',
+          enforce: true,
+        },
+      },
     },
   },
   devServer: {

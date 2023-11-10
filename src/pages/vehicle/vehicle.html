@@ -3,9 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vehicle</title>
+    <title>Consultar Historial | Vehículo | MerkautoEC S.A</title>
   </head>
   <body>
-    <a href="index.html">Go to Index Page</a>
+    <header id="header" class="bg-white">
+      <div
+        class="container flex flex-col items-center justify-between max-w-screen-lg gap-3 px-4 py-4 mx-auto lg:px-0 sm:flex-row"
+      >
+        <a
+          href="https://maps.app.goo.gl/LRxm7ESpvsyR2iwq9"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="grid text-center"
+        >
+          <img
+            class="w-48 md:w-60"
+            src=""
+            alt="Merkauto brand logo"
+            id="brandImage"
+          />
+        </a>
+        <ul class="flex items-center gap-4 p-0 list-none">
+          <li
+            class="text-sm md:hover:-translate-y-0.5 md:transition bg-blue-600 rounded-md p-2 text-white cursor-pointer relative hidden"
+          >
+            <span class="text-sm">
+              <i class="mr-1 cursor-pointer fa-solid fa-upload"></i>
+              Cargar Archivo</span
+            >
+            <input
+              type="file"
+              class="absolute inset-0 left-0 z-50 w-full h-full opacity-0 cursor-pointer"
+              id="fileInput"
+            />
+          </li>
+          <li>
+            <a
+              href="./vehicle.html"
+              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition font-semibold bg-blue-500 p-1 px-2 text-white md:hover:bg-black rounded-md"
+              >Historial</a
+            >
+          </li>
+          <li>
+            <a
+              href="./index.html"
+              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition font-semibold bg-blue-500 p-1 px-2 text-white md:hover:bg-black rounded-md"
+              >Generar Orden</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
   </body>
 </html>
