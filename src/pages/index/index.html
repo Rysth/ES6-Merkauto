@@ -14,10 +14,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Montserrat"
-    />
   </head>
   <body id="content">
     <header id="header" class="bg-white">
@@ -53,16 +49,16 @@
           </li>
           <li>
             <a
-              href="./vehicle.html"
-              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition font-semibold bg-blue-500 p-1 px-2 text-white md:hover:bg-black rounded-md print:hidden"
-              >Historial</a
+              href="./index.html"
+              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition bg-blue-500 p-1 px-2 text-white md:hover:bg-black rounded-md print:hidden"
+              >Generar Orden</a
             >
           </li>
           <li>
             <a
-              href="./index.html"
-              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition font-semibold bg-blue-500 p-1 px-2 text-white md:hover:bg-black rounded-md print:hidden"
-              >Generar Orden</a
+              href="./vehicle.html"
+              class="inline-block text-sm md:hover:-translate-y-0.5 md:transition bg-blue-500 p-1 px-2 text-white md:hover:bg-black rounded-md print:hidden"
+              >Consultar Vehículo</a
             >
           </li>
         </ul>
@@ -80,17 +76,15 @@
           <form action="#" id="form">
             <fieldset class="grid gap-10 outline-none md:gap-16 sm:grid-cols-2">
               <ul class="grid gap-2 p-0 list-none">
-                <header
+                <li
                   class="flex flex-col items-center justify-between mb-2 sm:flex-row"
                 >
                   <h2 class="text-base font-black md:text-lg">
                     Datos del Cliente
                   </h2>
-                </header>
+                </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="cl_cedula"
-                    >Cédula:</label
-                  >
+                  <label class="text-sm" for="cl_cedula">Cédula:</label>
                   <input
                     type="text"
                     name="cl_cedula"
@@ -100,9 +94,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="cl_nombre"
-                    >Nombre:</label
-                  >
+                  <label class="text-sm" for="cl_nombre">Nombre:</label>
                   <input
                     type="text"
                     name="cl_nombre "
@@ -112,7 +104,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="cl_propietario"
+                  <label class="text-sm" for="cl_propietario"
                     >Responsable/Propietario:</label
                   >
                   <input
@@ -124,9 +116,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="cl_direccion"
-                    >Dirección:</label
-                  >
+                  <label class="text-sm" for="cl_direccion">Dirección:</label>
                   <input
                     type="text"
                     name="cl_direccion"
@@ -136,9 +126,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="cl_celular"
-                    >Celular:</label
-                  >
+                  <label class="text-sm" for="cl_celular">Celular:</label>
                   <input
                     type="text"
                     name="cl_celular"
@@ -146,9 +134,7 @@
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm font-semibold" for="cl_telefono"
-                    >Teléfono:</label
-                  >
+                  <label class="text-sm" for="cl_telefono">Teléfono:</label>
                   <input
                     type="tel"
                     name="cl_telefono"
@@ -159,9 +145,7 @@
                 </li>
 
                 <li class="flex items-center gap-4">
-                  <label
-                    class="text-sm font-semibold md:w-32"
-                    for="cl_recepcion"
+                  <label class="text-sm md:w-32" for="cl_recepcion"
                     >Recibido por:</label
                   >
                   <input
@@ -174,7 +158,7 @@
                 </li>
 
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold md:w-64" for="cl_tecnico"
+                  <label class="text-sm md:w-64" for="cl_tecnico"
                     >Técnico Responsable:</label
                   >
                   <input
@@ -187,25 +171,24 @@
                 </li>
               </ul>
               <ul class="grid gap-2 p-0 list-none">
-                <header
+                <li
                   class="flex flex-col items-center justify-between mb-2 sm:flex-row"
                 >
                   <h2 class="text-base font-bold md:text-lg">
                     Datos del Vehículo
                   </h2>
-                </header>
+                </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="v_oc">O/C:</label>
+                  <label class="text-sm" for="v_placa">Placa:</label>
                   <input
                     type="text"
-                    name="v_oc"
-                    id="v_oc"
-                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
+                    name="v_placa"
+                    id="v_placa"
+                    class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-indigo-200 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm font-semibold" for="v_clave"
-                    >Clave:</label
-                  >
+
+                  <label class="text-sm" for="v_clave">Clave:</label>
                   <input
                     type="text"
                     name="v_clave"
@@ -215,9 +198,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="v_marca"
-                    >Marca:</label
-                  >
+                  <label class="text-sm" for="v_marca">Marca:</label>
                   <input
                     type="text"
                     name="v_marca"
@@ -225,9 +206,7 @@
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm font-semibold" for="v_color"
-                    >Color:</label
-                  >
+                  <label class="text-sm" for="v_color">Color:</label>
                   <input
                     type="color"
                     name="v_color"
@@ -237,9 +216,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="v_modelo"
-                    >Modelo:</label
-                  >
+                  <label class="text-sm" for="v_modelo">Modelo:</label>
                   <input
                     type="text"
                     name="v_modelo"
@@ -247,7 +224,7 @@
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm font-semibold" for="v_anio">Año:</label>
+                  <label class="text-sm" for="v_anio">Año:</label>
                   <input
                     type="number"
                     name="v_anio"
@@ -259,9 +236,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-5">
-                  <label class="text-sm font-semibold" for="v_chasis"
-                    >Chasis:</label
-                  >
+                  <label class="text-sm" for="v_chasis">Chasis:</label>
                   <input
                     type="text"
                     name="v_chasis"
@@ -271,9 +246,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="v_motor"
-                    >Motor:</label
-                  >
+                  <label class="text-sm" for="v_motor">Motor:</label>
                   <input
                     type="text"
                     name="v_motor"
@@ -281,21 +254,17 @@
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
-                  <label class="text-sm font-semibold" for="v_placa"
-                    >Placa:</label
-                  >
+                  <label class="text-sm" for="v_oc">O/C:</label>
                   <input
                     type="text"
-                    name="v_placa"
-                    id="v_placa"
+                    name="v_oc"
+                    id="v_oc"
                     class="w-full p-0.5 px-2 border focus:border-gray-500 rounded-md outline-none bg-gray-100 focus:bg-white text-sm"
                     required
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label
-                    class="text-sm font-semibold md:w-40"
-                    for="v_fecha_entrega"
+                  <label class="text-sm md:w-40" for="v_fecha_entrega"
                     >Fecha Entrega:</label
                   >
                   <input
@@ -307,7 +276,7 @@
                   />
                 </li>
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="v_kilometraje"
+                  <label class="text-sm" for="v_kilometraje"
                     >Kilometraje:</label
                   >
                   <input
@@ -321,11 +290,8 @@
                     required
                   />
                 </li>
-
                 <li class="flex items-center gap-4">
-                  <label class="text-sm font-semibold" for="v_detalle"
-                    >Detalles:</label
-                  >
+                  <label class="text-sm" for="v_detalle">Detalles:</label>
                   <input
                     type="text"
                     name="v_detalle"
@@ -408,7 +374,7 @@
                   class="items-center justify-end gap-2 mt-3 content-actions"
                 >
                   <li class="flex items-center justify-between gap-4">
-                    <label class="text-sm font-semibold" for="v_combustible"
+                    <label class="text-sm" for="v_combustible"
                       >Combustible:</label
                     >
                     <input
@@ -461,7 +427,7 @@
             <fieldset class="flex justify-center print:hidden">
               <button
                 type="submit"
-                class="p-2 px-4 text-sm font-semibold text-white transition bg-green-600 border rounded-md md:hover:shadow-2xl md:hover:scale-105"
+                class="p-2 px-4 text-sm text-white transition bg-green-600 border rounded-md md:hover:shadow-2xl md:hover:scale-105"
                 id="submit"
               >
                 <i class="fas fa-save"></i>
@@ -469,7 +435,7 @@
               </button>
               <button
                 type="button"
-                class="p-2 px-4 text-sm font-semibold text-white transition bg-blue-600 border rounded-md md:hover:shadow-2xl md:hover:scale-105"
+                class="p-2 px-4 text-sm text-white transition bg-blue-600 border rounded-md md:hover:shadow-2xl md:hover:scale-105"
                 id="printButton"
               >
                 <i class="fas fa-print"></i>
